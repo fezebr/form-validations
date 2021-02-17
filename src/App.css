@@ -1,38 +1,67 @@
-.App {
+body {
+
+  margin: 0px;
+  padding: 0px;
+  font-family: 'BYekan';
+  font-size: 14px;
+  word-spacing: -1px;
+  background-color: black;
+}
+
+.container {
+
+  width: 100% !important;
+  padding: 125px 0px;
+}
+.container-content{
+  width: 500px;
+  margin: 0px auto;
+  background-color: white;
+  text-align: center;
+  justify-content: center;
+  padding: 30px;
+}
+h1{
   text-align: center;
 }
+.input-group{
+  margin: 5px 0px;
+}
+.input-group .error{
+  text-align: left;
+  margin: 0px 0px 0px 145px;
+  font-size: 14px;
+  color: red;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+}
+.input-group .label{
+  font-size: 20px;
+  text-align: left;
+  margin: 0px 0px 0px 145px;
+}
+  
+input{
+  border-radius: 5px;
+  border: solid 1px rgb(49, 49, 49);
+  margin: 0;
+  padding: 8px 20px;
+  outline: none;
+}
+form button {
+  padding: 10px;
+  outline: none;
+  border: 1px solid rgb(49, 49, 49);
+  background: none;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+.checkbox .error{
+text-align: right;
+margin: 0px 100px 0px 0px;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
+.checkbox {
+  margin: 0px 145px 0px 0px;
+  margin-right: 48px;
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
