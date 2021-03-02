@@ -4,20 +4,24 @@ import * as Yup from 'yup'
 
 
 
-const Checkbox = ({ children, ...props }) => {
+const Checkbox = ({ ...props }) => {
 
     const [field, meta] = useField({ ...props, type: 'checkbox' });
     return (
-        <div>
+        <div className="input-group checkbox">
 
 
-            <label className="label">accept roules</label>
-            <input type="checkbox" {...field} {...props} />
-            {children}
+            <label className="label">
+                <input type="checkbox" {...field} {...props} />
+                accept roules
+            </label>
 
-            {meta.touched && meta.error ? (
-                <p className="error">{meta.error}</p>
-            ) : null}
+            <div className="error-valisation">
+
+                {meta.touched && meta.error ? (
+                    <p className="error">{meta.error}</p>
+                ) : null}
+            </div>
         </div>
     );
 };

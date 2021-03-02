@@ -12,12 +12,15 @@ const initialValues = {
      email: "",
      password: "",
      acceptedTerms: false,
-    
+
 }
 const onSubmit = values => {
      console.log('form data', values)
 
+
 }
+
+
 const validationSchema = Yup.object({
      name: Yup.string().max(15, 'Must be 15 characters or less').required(' name required ! '),
      email: Yup.string().email('Invalid Email format').required('email required ! '),
@@ -26,64 +29,59 @@ const validationSchema = Yup.object({
 })
 const AppForm = () => {
      return (
-          <Formik
-               initialValues={initialValues}
-               validationSchema={validationSchema}
-               onSubmit={onSubmit}
+          <div className="container">
+               <div className="container-content">
 
-          >
-               <div className="container">
-                    <div className="container-content">
+                    <header>
+                         <h1>form validations</h1>
+                    </header>
+                    <Formik
+                         initialValues={initialValues}
+                         validationSchema={validationSchema}
+                         onSubmit={onSubmit}
 
-                         <header>
-                              <h1>form validations</h1>
-                         </header>
+                    >
                          <Form >
-                          
-                              <div className="input-group">
-                                   <TextInput
-                                        label="Full Name"
-                                        id="name"
-                                        name="name"
-                                        type="name"
-                                        className="form-control"
-                                        placeholder=" Full Name "
-                                   />
-                              </div>
 
-                              <div className="input-group">
-                                   <TextInput
-                                        label="Email Adress"
-                                        id="email"
-                                        name="email"
-                                        type="text"
-                                        className="form-control"
-                                        placeholder="fezebr2000@gmail.com"
-                                   />
-                              </div>
 
-                              <div className="input-group">
-                                   <TextInput
-                                        label="Password"
-                                        id="password"
-                                        name="password"
-                                        type="password"
-                                        className="form-control"
-                                        placeholder="your password "
-                                   />
-                              </div>
+                              <TextInput
+                                   label="Full Name"
+                                   id="name"
+                                   name="name"
+                                   type="name"
+                                   className="form-control"
+                                   placeholder=" Full Name "
+                              />
 
-                              <div className="input-group checkbox">
-                               <Checkbox
-                               name="acceptedTerms"
-                               />
-                              </div>
 
-                              <button type="submit">Submit</button>
+
+                              <TextInput
+                                   label="Email Adress"
+                                   id="email"
+                                   name="email"
+                                   type="text"
+                                   className="form-control"
+                                   placeholder="fezebr2000@gmail.com"
+                              />
+
+                              <TextInput
+                                   label="Password"
+                                   id="password"
+                                   name="password"
+                                   type="password"
+                                   className="form-control"
+                                   placeholder="your password "
+                              />
+
+                              <Checkbox
+                                   name="acceptedTerms"
+                              />
+
+                              <button type="reset">Submit</button>
                          </Form>
-                    </div>
+                    </Formik>
                </div>
-          </Formik>
+          </div>
      );
 }
 
